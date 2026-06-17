@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+:root {
+  --background: #030712; /* Deep slate-950 */
+  --foreground: #f8fafc; /* slate-50 */
+}
+
+@theme {
+  --font-serif: 'Lora', Georgia, serif;
+  --font-sans: 'Mulish', 'Inter', system-ui, sans-serif;
+  --color-slate-850: #1e293b;
+  --color-slate-950: #030712;
+  --color-slate-900: #0f172a;
+  --color-brand-red: #cf2e2e;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Custom premium scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #030712;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 9999px;
+  border: 2px solid #030712;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #cf2e2e;
+}
+
+/* Custom transitions and helper classes */
+.font-editorial {
+  font-family: var(--font-serif);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulseBorder {
+  0%, 100% { border-color: rgba(207, 46, 46, 0.4); }
+  50% { border-color: rgba(207, 46, 46, 0.9); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-pulse-border {
+  animation: pulseBorder 2s infinite ease-in-out;
+}
