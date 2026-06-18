@@ -1,17 +1,19 @@
 @import "tailwindcss";
 
 :root {
-  --background: #030712; /* Deep slate-950 */
+  --background: #000a14; /* Deep brand navy background */
   --foreground: #f8fafc; /* slate-50 */
 }
 
 @theme {
   --font-serif: 'Lora', Georgia, serif;
   --font-sans: 'Mulish', 'Inter', system-ui, sans-serif;
-  --color-slate-850: #1e293b;
-  --color-slate-950: #030712;
-  --color-slate-900: #0f172a;
-  --color-brand-red: #cf2e2e;
+  --color-slate-850: #00152b; /* Deep navy borders/panels */
+  --color-slate-950: #000a14;
+  --color-slate-900: #000f20;
+  --color-brand-blue: #0073bb;
+  --color-brand-blue-hover: #068adc;
+  --color-brand-orange: #e47735;
 }
 
 body {
@@ -30,15 +32,15 @@ body {
   height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #030712;
+  background: #000a14;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1e293b;
+  background: #00152b;
   border-radius: 9999px;
-  border: 2px solid #030712;
+  border: 2px solid #000a14;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #cf2e2e;
+  background: #0073bb;
 }
 
 /* Custom transitions and helper classes */
@@ -52,8 +54,8 @@ body {
 }
 
 @keyframes pulseBorder {
-  0%, 100% { border-color: rgba(207, 46, 46, 0.4); }
-  50% { border-color: rgba(207, 46, 46, 0.9); }
+  0%, 100% { border-color: rgba(0, 115, 187, 0.4); }
+  50% { border-color: rgba(0, 115, 187, 0.9); }
 }
 
 .animate-fade-in {

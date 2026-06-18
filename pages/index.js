@@ -241,7 +241,7 @@ export default function Home() {
     : INSIGHTS.filter(item => item.category === activeCategory);
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 font-sans selection:bg-brand-red selection:text-slate-100">
+    <div className="min-h-screen bg-slate-950 text-slate-100 font-sans selection:bg-brand-blue selection:text-slate-100">
       <Head>
         <title>LightCastle Partners | Upgraded Corporate Portal</title>
         <meta name="description" content="An upgraded B2B consulting portal for LightCastle Partners. Dynamic service models, custom insights filter, and interactive project onboarding planner." />
@@ -253,8 +253,8 @@ export default function Home() {
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/90 backdrop-blur-md animate-fade-in">
           <div className="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden max-w-4xl w-full relative shadow-2xl animate-scale-up">
             <div className="p-4 border-b border-slate-800 flex items-center justify-between bg-slate-950/60">
-              <span className="text-xs font-mono font-bold text-brand-red tracking-widest uppercase flex items-center gap-1.5">
-                <span className="h-2 w-2 rounded-full bg-brand-red animate-pulse"></span>
+              <span className="text-xs font-mono font-bold text-brand-orange tracking-widest uppercase flex items-center gap-1.5">
+                <span className="h-2 w-2 rounded-full bg-brand-orange animate-pulse"></span>
                 Now Streaming
               </span>
               <h4 className="text-xs font-bold text-slate-300 line-clamp-1 max-w-lg pr-4">{videoModal.title}</h4>
@@ -285,12 +285,11 @@ export default function Home() {
       <header className="sticky top-0 z-35 bg-slate-950/70 backdrop-blur-md border-b border-slate-900/60 py-4 px-6 md:px-12">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <a href="#" className="flex items-center gap-1.5 group">
-            <span className="font-editorial text-xl md:text-2xl font-black text-slate-100 tracking-tight">
-              LightCastle
-            </span>
-            <span className="font-sans text-xs uppercase tracking-widest font-extrabold text-brand-red border border-brand-red/30 px-1.5 py-0.5 rounded">
-              Partners
-            </span>
+            <img 
+              src="https://lightcastlepartners.com/wp-content/uploads/2024/09/LCP-Logo-Website-13.png" 
+              alt="LightCastle Partners" 
+              className="h-10 md:h-12 w-auto object-contain"
+            />
           </a>
 
           <nav className="hidden lg:flex items-center gap-8 text-xs font-bold tracking-wider text-slate-400">
@@ -305,7 +304,7 @@ export default function Home() {
           <div>
             <a 
               href="#planner" 
-              className="bg-brand-red hover:bg-red-700 text-slate-100 px-4 py-2 rounded-lg text-xs font-bold tracking-wider uppercase transition-all active:scale-95 cursor-pointer shadow-lg shadow-brand-red/10"
+              className="bg-brand-blue hover:bg-brand-blue-hover text-slate-100 px-4 py-2 rounded-lg text-xs font-bold tracking-wider uppercase transition-all active:scale-95 cursor-pointer shadow-lg shadow-brand-blue/10"
             >
               Get in Touch
             </a>
@@ -315,17 +314,17 @@ export default function Home() {
 
       {/* Hero Section */}
       <section id="about" className="relative py-20 px-6 md:px-12 overflow-hidden border-b border-slate-900/60">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#0f172a_1px,transparent_1px),linear-gradient(to_bottom,#0f172a_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-25"></div>
-        <div className="absolute top-20 right-0 h-96 w-96 bg-brand-red/5 rounded-full blur-3xl pointer-events-none"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#001224_1px,transparent_1px),linear-gradient(to_bottom,#001224_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-25"></div>
+        <div className="absolute top-20 right-0 h-96 w-96 bg-brand-blue/5 rounded-full blur-3xl pointer-events-none"></div>
 
         <div className="max-w-7xl mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-7">
             <div className="flex items-center gap-2 mb-4">
-              <span className="h-2 w-2 rounded-full bg-brand-red"></span>
-              <span className="text-[10px] font-mono tracking-widest uppercase text-brand-red font-bold">Data-Driven Advisory</span>
+              <span className="h-2 w-2 rounded-full bg-brand-orange"></span>
+              <span className="text-[10px] font-mono tracking-widest uppercase text-brand-orange font-bold">Data-Driven Advisory</span>
             </div>
             <h2 className="font-editorial text-3xl md:text-5xl lg:text-6xl font-black leading-tight text-slate-100 tracking-tight">
-              At LightCastle, we take a systemic and data-driven approach to create opportunities for <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-amber-500">growth and impact.</span>
+              At LightCastle, we take a systemic and data-driven approach to create opportunities for <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-blue to-brand-orange">growth and impact.</span>
             </h2>
             <p className="text-sm md:text-base text-slate-400 mt-6 leading-relaxed max-w-xl">
               LightCastle Partners — an international management consulting firm — creates systemic and data-driven opportunities for growth and impact in emerging markets. By collaborating with development partners and leveraging the power of the private sector, we strive to boost economies, inspire businesses, and change lives at scale.
@@ -333,9 +332,9 @@ export default function Home() {
             <div className="mt-8 flex flex-wrap gap-4">
               <a href="#services" className="flex items-center gap-2 text-xs font-bold bg-slate-900 border border-slate-800 hover:border-slate-700 py-3 px-6 rounded-xl hover:bg-slate-850 transition-all cursor-pointer">
                 <span>Explore Services</span>
-                <ArrowRight className="h-4 w-4 text-brand-red" />
+                <ArrowRight className="h-4 w-4 text-brand-blue" />
               </a>
-              <a href="#planner" className="flex items-center gap-2 text-xs font-bold bg-brand-red/10 border border-brand-red/20 text-brand-red hover:bg-brand-red/20 py-3 px-6 rounded-xl transition-all cursor-pointer">
+              <a href="#planner" className="flex items-center gap-2 text-xs font-bold bg-brand-blue/10 border border-brand-blue/20 text-brand-blue hover:bg-brand-blue/20 py-3 px-6 rounded-xl transition-all cursor-pointer">
                 <span>Configure Project</span>
                 <ChevronRight className="h-4 w-4" />
               </a>
@@ -346,7 +345,7 @@ export default function Home() {
             <div className="bg-slate-900/40 border border-slate-850 hover:border-slate-800/80 p-6 rounded-2xl transition-all">
               <div className="flex items-center justify-between text-slate-500 mb-2">
                 <span className="text-[10px] font-mono tracking-widest uppercase font-bold">Scale</span>
-                <Users className="h-4 w-4 text-brand-red" />
+                <Users className="h-4 w-4 text-brand-blue" />
               </div>
               <h3 className="text-3xl font-black text-slate-100 tracking-tight">150+</h3>
               <p className="text-xs text-slate-400 mt-1">Clients served across public, private, and development domains.</p>
@@ -377,7 +376,7 @@ export default function Home() {
       <section id="services" className="py-24 px-6 md:px-12 border-b border-slate-900/60 bg-slate-950/40">
         <div className="max-w-7xl mx-auto">
           <div className="mb-12">
-            <span className="text-[10px] font-mono tracking-widest uppercase text-brand-red font-bold">Capabilities</span>
+            <span className="text-[10px] font-mono tracking-widest uppercase text-brand-blue font-bold">Capabilities</span>
             <h2 className="font-editorial text-2xl md:text-4xl font-black text-slate-100 mt-1 tracking-tight">
               Systemic & Targeted Services
             </h2>
@@ -399,15 +398,15 @@ export default function Home() {
                     onClick={() => setActiveTab(key)}
                     className={`w-full text-left p-4 rounded-xl border transition-all duration-300 flex items-center justify-between cursor-pointer focus:outline-none ${
                       isActive 
-                        ? 'bg-slate-900 border-slate-800 text-slate-100 shadow-md shadow-brand-red/5' 
+                        ? 'bg-slate-900 border-slate-800 text-slate-100 shadow-md shadow-brand-blue/5' 
                         : 'border-transparent text-slate-500 hover:text-slate-300 hover:bg-slate-900/20'
                     }`}
                   >
                     <div className="flex items-center gap-3">
-                      <Icon className={`h-4.5 w-4.5 ${isActive ? 'text-brand-red' : 'text-slate-600'}`} />
+                      <Icon className={`h-4.5 w-4.5 ${isActive ? 'text-brand-blue' : 'text-slate-600'}`} />
                       <span className="text-xs font-bold tracking-wide uppercase">{s.title.split(' & ')[0]}</span>
                     </div>
-                    <ChevronRight className={`h-4 w-4 transition-transform duration-300 ${isActive ? 'rotate-90 text-brand-red' : 'text-slate-700'}`} />
+                    <ChevronRight className={`h-4 w-4 transition-transform duration-300 ${isActive ? 'rotate-90 text-brand-blue' : 'text-slate-700'}`} />
                   </button>
                 );
               })}
@@ -429,7 +428,7 @@ export default function Home() {
                     className="bg-slate-900/60 border border-slate-850 p-5 rounded-xl hover:border-slate-800 transition-all flex flex-col justify-between"
                   >
                     <div>
-                      <h4 className="text-xs font-bold text-brand-red uppercase tracking-wider mb-2">
+                      <h4 className="text-xs font-bold text-brand-orange uppercase tracking-wider mb-2">
                         {feature.name}
                       </h4>
                       <p className="text-[11px] text-slate-400 leading-relaxed">
@@ -448,7 +447,7 @@ export default function Home() {
       <section id="clients" className="py-20 px-6 md:px-12 border-b border-slate-900/60">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <span className="text-[10px] font-mono tracking-widest uppercase text-brand-red font-bold">Collaborations</span>
+            <span className="text-[10px] font-mono tracking-widest uppercase text-brand-blue font-bold">Collaborations</span>
             <h2 className="font-editorial text-2xl md:text-3xl font-black text-slate-100 mt-1 tracking-tight">
               Featured Corporate & Development Clients
             </h2>
@@ -461,7 +460,7 @@ export default function Home() {
             {CLIENTS.map((client, idx) => (
               <div 
                 key={idx}
-                className="bg-white/5 border border-white/5 hover:border-brand-red/30 rounded-xl p-4 flex items-center justify-center h-20 transition-all duration-300 group cursor-default"
+                className="bg-white/5 border border-white/5 hover:border-brand-blue/30 rounded-xl p-4 flex items-center justify-center h-20 transition-all duration-300 group cursor-default"
               >
                 <img 
                   src={client.img} 
@@ -479,7 +478,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
             <div>
-              <span className="text-[10px] font-mono tracking-widest uppercase text-brand-red font-bold">Thought Leadership</span>
+              <span className="text-[10px] font-mono tracking-widest uppercase text-brand-blue font-bold">Thought Leadership</span>
               <h2 className="font-editorial text-2xl md:text-4xl font-black text-slate-100 mt-1 tracking-tight">
                 Featured Insights & Analytics
               </h2>
@@ -493,7 +492,7 @@ export default function Home() {
                   onClick={() => setActiveCategory(cat)}
                   className={`px-3 py-1.5 rounded-lg border transition-all cursor-pointer ${
                     activeCategory === cat 
-                      ? 'bg-brand-red border-brand-red text-slate-100' 
+                      ? 'bg-brand-blue border-brand-blue text-slate-100' 
                       : 'border-slate-800 hover:border-slate-700 text-slate-400 hover:text-slate-200 bg-slate-900/40'
                   }`}
                 >
@@ -516,7 +515,7 @@ export default function Home() {
                       alt={item.title} 
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 opacity-80 group-hover:opacity-100"
                     />
-                    <span className="absolute top-3 left-3 bg-slate-950/80 border border-slate-800/80 text-[8px] font-mono font-bold text-brand-red uppercase px-2 py-0.5 rounded tracking-wider">
+                    <span className="absolute top-3 left-3 bg-slate-950/80 border border-slate-800/80 text-[8px] font-mono font-bold text-brand-orange uppercase px-2 py-0.5 rounded tracking-wider">
                       {item.category === 'industry' ? 'Industry Insights' : item.category}
                     </span>
                   </div>
@@ -525,7 +524,7 @@ export default function Home() {
                       <Clock className="h-3 w-3" />
                       <span>{item.readTime} Read</span>
                     </div>
-                    <h3 className="text-sm font-bold text-slate-200 font-editorial mb-3 leading-snug group-hover:text-brand-red transition-colors line-clamp-2">
+                    <h3 className="text-sm font-bold text-slate-200 font-editorial mb-3 leading-snug group-hover:text-brand-blue transition-colors line-clamp-2">
                       {item.title}
                     </h3>
                     <p className="text-xs text-slate-400 leading-relaxed line-clamp-3">
@@ -536,7 +535,7 @@ export default function Home() {
                 <div className="p-5 pt-0">
                   <a 
                     href="#planner" 
-                    className="text-[10px] font-mono font-bold tracking-wider text-slate-400 group-hover:text-brand-red transition-colors flex items-center gap-1"
+                    className="text-[10px] font-mono font-bold tracking-wider text-slate-400 group-hover:text-brand-blue transition-colors flex items-center gap-1"
                   >
                     <span>Read Report</span>
                     <ChevronRight className="h-3 w-3" />
@@ -552,7 +551,7 @@ export default function Home() {
       <section className="py-24 px-6 md:px-12 border-b border-slate-900/60">
         <div className="max-w-7xl mx-auto">
           <div className="mb-12">
-            <span className="text-[10px] font-mono tracking-widest uppercase text-brand-red font-bold">Videos</span>
+            <span className="text-[10px] font-mono tracking-widest uppercase text-brand-blue font-bold">Videos</span>
             <h2 className="font-editorial text-2xl md:text-4xl font-black text-slate-100 mt-1 tracking-tight">
               Featured Case Studies & Diaries
             </h2>
@@ -576,7 +575,7 @@ export default function Home() {
                     className="w-full h-full object-cover opacity-70 group-hover:opacity-90 group-hover:scale-102 transition-all duration-300"
                   />
                   <div className="absolute inset-0 bg-slate-950/20 group-hover:bg-slate-950/40 transition-colors flex items-center justify-center">
-                    <div className="bg-brand-red/90 group-hover:bg-brand-red border border-brand-red/50 text-slate-100 p-3 rounded-full shadow-lg group-hover:scale-110 transition-all duration-300">
+                    <div className="bg-brand-orange/90 group-hover:bg-brand-orange border border-brand-orange/50 text-slate-100 p-3 rounded-full shadow-lg group-hover:scale-110 transition-all duration-300">
                       <Play className="h-4 w-4 fill-current ml-0.5" />
                     </div>
                   </div>
@@ -585,7 +584,7 @@ export default function Home() {
                   </span>
                 </div>
                 <div className="p-4">
-                  <h3 className="text-xs font-bold text-slate-200 group-hover:text-brand-red transition-colors line-clamp-1 mb-1">
+                  <h3 className="text-xs font-bold text-slate-200 group-hover:text-brand-blue transition-colors line-clamp-1 mb-1">
                     {video.title}
                   </h3>
                   <p className="text-[10px] text-slate-400 leading-relaxed line-clamp-2">
@@ -602,7 +601,7 @@ export default function Home() {
       <section id="news" className="py-24 px-6 md:px-12 border-b border-slate-900/60 bg-slate-950/40">
         <div className="max-w-7xl mx-auto">
           <div className="mb-12">
-            <span className="text-[10px] font-mono tracking-widest uppercase text-brand-red font-bold">Press Room</span>
+            <span className="text-[10px] font-mono tracking-widest uppercase text-brand-blue font-bold">Press Room</span>
             <h2 className="font-editorial text-2xl md:text-4xl font-black text-slate-100 mt-1 tracking-tight">
               Latest at LightCastle
             </h2>
@@ -629,7 +628,7 @@ export default function Home() {
                 </div>
                 <div>
                   <div className="text-[9px] font-mono text-slate-500 mb-1">{item.date}</div>
-                  <h3 className="text-xs font-bold text-slate-200 group-hover:text-brand-red transition-colors line-clamp-2 leading-snug">
+                  <h3 className="text-xs font-bold text-slate-200 group-hover:text-brand-blue transition-colors line-clamp-2 leading-snug">
                     {item.title}
                   </h3>
                 </div>
@@ -642,7 +641,7 @@ export default function Home() {
       {/* Interactive Project Planner Funnel */}
       <section id="planner" className="py-24 px-6 md:px-12 border-b border-slate-900/60">
         <div className="max-w-3xl mx-auto bg-slate-900/40 border border-slate-850 rounded-3xl p-6 md:p-10 relative overflow-hidden">
-          <div className="absolute top-0 right-0 h-40 w-40 bg-brand-red/5 rounded-full blur-3xl pointer-events-none"></div>
+          <div className="absolute top-0 right-0 h-40 w-40 bg-brand-blue/5 rounded-full blur-3xl pointer-events-none"></div>
 
           {/* Stepper Progress bar */}
           <div className="flex items-center gap-2 mb-8">
@@ -650,7 +649,7 @@ export default function Home() {
               <div 
                 key={s} 
                 className={`h-1.5 flex-1 rounded-full transition-all duration-300 ${
-                  plannerStep >= s ? 'bg-brand-red' : 'bg-slate-850'
+                  plannerStep >= s ? 'bg-brand-orange' : 'bg-slate-850'
                 }`}
               ></div>
             ))}
@@ -658,7 +657,7 @@ export default function Home() {
 
           {plannerStep === 0 && (
             <div className="animate-fade-in">
-              <span className="text-[10px] font-mono tracking-widest uppercase text-brand-red font-bold mb-1 block">Project Intake • Step 1</span>
+              <span className="text-[10px] font-mono tracking-widest uppercase text-brand-orange font-bold mb-1 block">Project Intake • Step 1</span>
               <h3 className="font-editorial text-2xl font-black text-slate-100 tracking-tight mb-2">
                 What is your primary sector?
               </h3>
@@ -674,7 +673,7 @@ export default function Home() {
                   <button 
                     key={s.key}
                     onClick={() => handleSectorSelect(s.key)}
-                    className="p-5 text-left border border-slate-850 hover:border-brand-red/40 bg-slate-950/40 rounded-2xl hover:bg-slate-900/50 cursor-pointer transition-all focus:outline-none flex flex-col justify-between h-28"
+                    className="p-5 text-left border border-slate-850 hover:border-brand-blue/40 bg-slate-950/40 rounded-2xl hover:bg-slate-900/50 cursor-pointer transition-all focus:outline-none flex flex-col justify-between h-28"
                   >
                     <span className="text-xs font-bold text-slate-200 uppercase tracking-wider">{s.label}</span>
                     <span className="text-[10px] text-slate-500 leading-snug">{s.desc}</span>
@@ -686,7 +685,7 @@ export default function Home() {
 
           {plannerStep === 1 && (
             <div className="animate-fade-in">
-              <span className="text-[10px] font-mono tracking-widest uppercase text-brand-red font-bold mb-1 block">Project Intake • Step 2</span>
+              <span className="text-[10px] font-mono tracking-widest uppercase text-brand-orange font-bold mb-1 block">Project Intake • Step 2</span>
               <h3 className="font-editorial text-2xl font-black text-slate-100 tracking-tight mb-2">
                 What challenge are you trying to solve?
               </h3>
@@ -702,7 +701,7 @@ export default function Home() {
                   <button 
                     key={g.key}
                     onClick={() => handleGoalSelect(g.key)}
-                    className="p-5 text-left border border-slate-850 hover:border-brand-red/40 bg-slate-950/40 rounded-2xl hover:bg-slate-900/50 cursor-pointer transition-all focus:outline-none flex flex-col justify-between h-28"
+                    className="p-5 text-left border border-slate-850 hover:border-brand-blue/40 bg-slate-950/40 rounded-2xl hover:bg-slate-900/50 cursor-pointer transition-all focus:outline-none flex flex-col justify-between h-28"
                   >
                     <span className="text-xs font-bold text-slate-200 uppercase tracking-wider">{g.label}</span>
                     <span className="text-[10px] text-slate-500 leading-snug">{g.desc}</span>
@@ -721,7 +720,7 @@ export default function Home() {
 
           {plannerStep === 2 && (
             <div className="animate-fade-in">
-              <span className="text-[10px] font-mono tracking-widest uppercase text-brand-red font-bold mb-1 block">Project Intake • Step 3</span>
+              <span className="text-[10px] font-mono tracking-widest uppercase text-brand-orange font-bold mb-1 block">Project Intake • Step 3</span>
               <h3 className="font-editorial text-2xl font-black text-slate-100 tracking-tight mb-2">
                 Complete Project Scope
               </h3>
@@ -750,7 +749,7 @@ export default function Home() {
                         placeholder="Your Name"
                         value={plannerData.name}
                         onChange={(e) => setPlannerData(prev => ({ ...prev, name: e.target.value }))}
-                        className="bg-slate-950/60 border border-slate-800 rounded-xl p-3 text-xs focus:border-brand-red outline-none text-slate-200"
+                        className="bg-slate-950/60 border border-slate-800 rounded-xl p-3 text-xs focus:border-brand-blue outline-none text-slate-200"
                       />
                     </div>
                     <div className="flex flex-col gap-1.5">
@@ -761,7 +760,7 @@ export default function Home() {
                         placeholder="name@organization.com"
                         value={plannerData.email}
                         onChange={(e) => setPlannerData(prev => ({ ...prev, email: e.target.value }))}
-                        className="bg-slate-950/60 border border-slate-800 rounded-xl p-3 text-xs focus:border-brand-red outline-none text-slate-200"
+                        className="bg-slate-950/60 border border-slate-800 rounded-xl p-3 text-xs focus:border-brand-blue outline-none text-slate-200"
                       />
                     </div>
                   </div>
@@ -774,7 +773,7 @@ export default function Home() {
                       placeholder="Organization Name"
                       value={plannerData.company}
                       onChange={(e) => setPlannerData(prev => ({ ...prev, company: e.target.value }))}
-                      className="bg-slate-950/60 border border-slate-800 rounded-xl p-3 text-xs focus:border-brand-red outline-none text-slate-200"
+                      className="bg-slate-950/60 border border-slate-800 rounded-xl p-3 text-xs focus:border-brand-blue outline-none text-slate-200"
                     />
                   </div>
 
@@ -786,7 +785,7 @@ export default function Home() {
                       placeholder="Detail your challenges, goals, or timeframes..."
                       value={plannerData.message}
                       onChange={(e) => setPlannerData(prev => ({ ...prev, message: e.target.value }))}
-                      className="bg-slate-950/60 border border-slate-800 rounded-xl p-3 text-xs focus:border-brand-red outline-none text-slate-200 resize-none"
+                      className="bg-slate-950/60 border border-slate-800 rounded-xl p-3 text-xs focus:border-brand-blue outline-none text-slate-200 resize-none"
                     ></textarea>
                   </div>
 
@@ -801,7 +800,7 @@ export default function Home() {
                     <button 
                       type="submit"
                       disabled={isSubmittingPlanner}
-                      className="bg-brand-red hover:bg-red-700 text-slate-100 px-6 py-3 rounded-xl text-xs font-bold tracking-wider uppercase transition-all active:scale-95 cursor-pointer disabled:opacity-50 flex items-center gap-2"
+                      className="bg-brand-blue hover:bg-brand-blue-hover text-slate-100 px-6 py-3 rounded-xl text-xs font-bold tracking-wider uppercase transition-all active:scale-95 cursor-pointer disabled:opacity-50 flex items-center gap-2"
                     >
                       {isSubmittingPlanner ? 'Configuring Profile...' : 'Submit Profile'}
                       <Send className="h-3.5 w-3.5" />
@@ -820,12 +819,11 @@ export default function Home() {
           
           <div className="lg:col-span-4 flex flex-col gap-4">
             <a href="#" className="flex items-center gap-1.5">
-              <span className="font-editorial text-2xl font-black text-slate-100 tracking-tight">
-                LightCastle
-              </span>
-              <span className="font-sans text-xs uppercase tracking-widest font-extrabold text-brand-red border border-brand-red/30 px-1.5 py-0.5 rounded">
-                Partners
-              </span>
+              <img 
+                src="https://lightcastlepartners.com/wp-content/uploads/2024/09/LCP-Logo-Website-13.png" 
+                alt="LightCastle Partners" 
+                className="h-10 md:h-12 w-auto object-contain" 
+              />
             </a>
             <p className="text-xs text-slate-400 leading-relaxed max-w-sm">
               We take a systemic and data-driven approach to create opportunities for growth and impact in emerging markets.
@@ -888,11 +886,11 @@ export default function Home() {
                   placeholder="name@organization.com"
                   value={newsletterEmail}
                   onChange={(e) => setNewsletterEmail(e.target.value)}
-                  className="bg-slate-900 border border-slate-800 rounded-lg px-3 py-2 text-xs focus:border-brand-red outline-none text-slate-200 flex-1"
+                  className="bg-slate-900 border border-slate-800 rounded-lg px-3 py-2 text-xs focus:border-brand-blue outline-none text-slate-200 flex-1"
                 />
                 <button 
                   type="submit"
-                  className="bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-slate-700 text-brand-red p-2.5 rounded-lg cursor-pointer transition-all active:scale-95"
+                  className="bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-slate-700 text-brand-blue p-2.5 rounded-lg cursor-pointer transition-all active:scale-95"
                 >
                   <Send className="h-4.5 w-4.5 fill-current" />
                 </button>
@@ -903,8 +901,8 @@ export default function Home() {
 
         <div className="max-w-7xl mx-auto border-t border-slate-900/60 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-[10px] font-mono text-slate-500 uppercase tracking-widest">
           <span>© 2026 LIGHTCASTLE PARTNERS. ALL RIGHTS RESERVED.</span>
-          <span className="text-brand-red/60 flex items-center gap-1.5 text-[9px]">
-            <Heart className="h-3 w-3 fill-current text-brand-red" />
+          <span className="text-brand-blue/60 flex items-center gap-1.5 text-[9px]">
+            <Heart className="h-3 w-3 fill-current text-brand-orange" />
             Designed for Systemic Impact
           </span>
         </div>
