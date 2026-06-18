@@ -7,7 +7,7 @@
 
 @theme {
   --font-serif: 'Lora', Georgia, serif;
-  --font-sans: 'Mulish', 'Inter', system-ui, sans-serif;
+  --font-sans: 'Inter', system-ui, sans-serif;
   --color-slate-850: #0e274c; /* Deep brand navy borders */
   --color-slate-950: #030d22; /* Rich brand navy background */
   --color-slate-900: #061633; /* Deep brand navy panel contrast */
@@ -50,6 +50,13 @@ body {
 /* Custom transitions and helper classes */
 .font-editorial {
   font-family: var(--font-serif);
+}
+
+/* Elevate editorial headers with professional semibold weights and refined kerning */
+h1.font-editorial, h2.font-editorial, h3.font-editorial, h4.font-editorial, .font-editorial {
+  font-weight: 600 !important; /* Forces premium semibold weight instead of heavy font-black */
+  letter-spacing: -0.015em;
+  line-height: 1.25;
 }
 
 @keyframes fadeIn {
