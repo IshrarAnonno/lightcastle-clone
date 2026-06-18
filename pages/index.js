@@ -94,7 +94,7 @@ export default function Home() {
               LightCastle Partners — an international management consulting firm — creates systemic and data-driven opportunities for growth and impact in emerging markets. By collaborating with development partners and leveraging the power of the private sector, we strive to boost economies, inspire businesses, and change lives at scale.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
-              <Link href="/services" className="flex items-center gap-2 text-xs font-bold bg-slate-900 border border-slate-800 hover:border-slate-700 py-3 px-6 rounded-xl hover:bg-slate-850 transition-all cursor-pointer">
+              <Link href="/services" className="flex items-center gap-2 text-xs font-bold bg-slate-900 border border-slate-850 hover:border-brand-blue/40 py-3 px-6 rounded-xl hover:bg-slate-850 transition-all cursor-pointer">
                 <span>Explore Services</span>
                 <ArrowRight className="h-4 w-4 text-brand-blue" />
               </Link>
@@ -106,7 +106,7 @@ export default function Home() {
           </div>
 
           <div className="lg:col-span-5 grid grid-cols-1 gap-4">
-            <div className="bg-slate-900/40 border border-slate-850 hover:border-slate-800/80 p-6 rounded-2xl transition-all">
+            <div className="bg-slate-900/40 border border-slate-850 hover:border-brand-blue/40 hover:shadow-lg hover:shadow-brand-blue/5 p-6 rounded-2xl transition-all">
               <div className="flex items-center justify-between text-slate-500 mb-2">
                 <span className="text-[10px] font-mono tracking-widest uppercase font-bold">Scale</span>
                 <Users className="h-4 w-4 text-brand-blue" />
@@ -115,7 +115,7 @@ export default function Home() {
               <p className="text-xs text-slate-400 mt-1">Clients served across public, private, and development domains.</p>
             </div>
 
-            <div className="bg-slate-900/40 border border-slate-850 hover:border-slate-800/80 p-6 rounded-2xl transition-all">
+            <div className="bg-slate-900/40 border border-slate-850 hover:border-brand-orange/40 hover:shadow-lg hover:shadow-brand-orange/5 p-6 rounded-2xl transition-all">
               <div className="flex items-center justify-between text-slate-500 mb-2">
                 <span className="text-[10px] font-mono tracking-widest uppercase font-bold">Reach</span>
                 <FilePieChart className="h-4 w-4 text-brand-orange" />
@@ -124,7 +124,7 @@ export default function Home() {
               <p className="text-xs text-slate-400 mt-1">Sectors impacted with deep market intelligence and assessment.</p>
             </div>
 
-            <div className="bg-slate-900/40 border border-slate-850 hover:border-slate-800/80 p-6 rounded-2xl transition-all">
+            <div className="bg-slate-900/40 border border-slate-850 hover:border-emerald-500/40 hover:shadow-lg hover:shadow-emerald-500/5 p-6 rounded-2xl transition-all">
               <div className="flex items-center justify-between text-slate-500 mb-2">
                 <span className="text-[10px] font-mono tracking-widest uppercase font-bold">Funding</span>
                 <TrendingUp className="h-4 w-4 text-emerald-400" />
@@ -165,7 +165,7 @@ export default function Home() {
                     onClick={() => setActiveTab(key)}
                     className={`w-full text-left p-4 rounded-xl border transition-all duration-300 flex items-center justify-between cursor-pointer focus:outline-none ${
                       isActive 
-                        ? 'bg-slate-900 border-slate-800 text-slate-100 shadow-md shadow-brand-blue/5' 
+                        ? 'bg-slate-900 border-brand-blue/30 text-slate-100 shadow-md shadow-brand-blue/5' 
                         : 'border-transparent text-slate-500 hover:text-slate-300 hover:bg-slate-900/20'
                     }`}
                   >
@@ -202,7 +202,7 @@ export default function Home() {
                 {SERVICES[activeTab].features.slice(0, 4).map((feature, idx) => (
                   <div 
                     key={idx} 
-                    className="bg-slate-900/60 border border-slate-850 p-5 rounded-xl hover:border-slate-800 transition-all flex flex-col justify-between"
+                    className="bg-slate-900/60 border border-slate-850 p-5 rounded-xl hover:border-brand-orange/40 hover:shadow-md hover:shadow-brand-orange/2 transition-all flex flex-col justify-between"
                   >
                     <div>
                       <h4 className="text-xs font-bold text-brand-orange uppercase tracking-wider mb-2">
@@ -237,7 +237,7 @@ export default function Home() {
             {CLIENTS.map((client, idx) => (
               <div 
                 key={idx}
-                className="bg-white/5 border border-white/5 hover:border-brand-blue/30 rounded-xl p-4 flex items-center justify-center h-20 transition-all duration-300 group cursor-default"
+                className="bg-slate-900/40 border border-slate-850 hover:border-brand-blue/40 rounded-xl p-4 flex items-center justify-center h-20 transition-all duration-300 group cursor-default"
               >
                 <img 
                   src={client.img} 
@@ -272,7 +272,7 @@ export default function Home() {
             {homeInsights.map((item, idx) => (
               <div 
                 key={idx}
-                className="bg-slate-900/40 border border-slate-850 hover:border-slate-800 rounded-2xl overflow-hidden flex flex-col justify-between group transition-all"
+                className="bg-slate-900/40 border border-slate-850 hover:border-brand-blue/45 rounded-2xl overflow-hidden flex flex-col justify-between group transition-all hover:shadow-lg hover:shadow-brand-blue/5"
               >
                 <div>
                   <div className="h-48 w-full overflow-hidden relative bg-slate-950">
@@ -327,7 +327,7 @@ export default function Home() {
               <div 
                 key={video.id}
                 onClick={() => setVideoModal({ isOpen: true, id: video.id, title: video.title })}
-                className="bg-slate-900/40 border border-slate-850 hover:border-slate-800 rounded-2xl overflow-hidden cursor-pointer group transition-all"
+                className="bg-slate-900/40 border border-slate-850 hover:border-brand-orange/45 rounded-2xl overflow-hidden cursor-pointer group transition-all hover:shadow-lg hover:shadow-brand-orange/5"
               >
                 <div className="relative aspect-video bg-slate-950 overflow-hidden">
                   <img 
@@ -378,7 +378,7 @@ export default function Home() {
                 target="_blank" 
                 rel="noopener noreferrer" 
                 key={idx}
-                className="bg-slate-900/40 border border-slate-850 hover:border-slate-800 p-4 rounded-xl flex gap-4 transition-all group items-center"
+                className="bg-slate-900/40 border border-slate-850 hover:border-brand-blue/45 p-4 rounded-xl flex gap-4 transition-all group items-center hover:shadow-lg hover:shadow-brand-blue/5"
               >
                 <div className="h-16 w-16 md:h-20 md:w-20 shrink-0 bg-slate-950 rounded-lg overflow-hidden border border-slate-800">
                   <img 
@@ -402,7 +402,8 @@ export default function Home() {
       {/* Interactive Project Planner Funnel CTA */}
       <section className="py-24 px-6 md:px-12 border-b border-slate-900/60 text-center">
         <div className="max-w-3xl mx-auto bg-slate-900/40 border border-slate-850 rounded-3xl p-8 md:p-12 relative overflow-hidden">
-          <div className="absolute top-0 right-0 h-40 w-40 bg-brand-blue/5 rounded-full blur-3xl pointer-events-none"></div>
+          <div className="absolute top-0 right-0 h-40 w-40 bg-brand-blue/10 rounded-full blur-3xl pointer-events-none"></div>
+          <div className="absolute bottom-0 left-0 h-40 w-40 bg-brand-orange/5 rounded-full blur-3xl pointer-events-none"></div>
           <span className="text-[10px] font-mono tracking-widest uppercase text-brand-orange font-bold mb-2 block">Enterprise Collaboration</span>
           <h2 className="font-editorial text-2xl md:text-4xl font-black text-slate-100 mt-1 tracking-tight leading-tight">
             Structure your project advisory scope.

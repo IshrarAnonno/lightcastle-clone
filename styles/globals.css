@@ -1,16 +1,16 @@
 @import "tailwindcss";
 
 :root {
-  --background: #000a14; /* Deep brand navy background */
+  --background: #030d22; /* Rich brand navy background instead of pitch black */
   --foreground: #f8fafc; /* slate-50 */
 }
 
 @theme {
   --font-serif: 'Lora', Georgia, serif;
   --font-sans: 'Mulish', 'Inter', system-ui, sans-serif;
-  --color-slate-850: #00152b; /* Deep navy borders/panels */
-  --color-slate-950: #000a14;
-  --color-slate-900: #000f20;
+  --color-slate-850: #0e274c; /* Deep brand navy borders */
+  --color-slate-950: #030d22; /* Rich brand navy background */
+  --color-slate-900: #061633; /* Deep brand navy panel contrast */
   --color-brand-blue: #0073bb;
   --color-brand-blue-hover: #068adc;
   --color-brand-orange: #e47735;
@@ -18,6 +18,10 @@
 
 body {
   background-color: var(--background);
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(0, 115, 187, 0.08) 0px, transparent 55%),
+    radial-gradient(at 100% 100%, rgba(228, 119, 53, 0.04) 0px, transparent 55%);
+  background-attachment: fixed;
   color: var(--foreground);
   font-family: var(--font-sans);
   margin: 0;
@@ -32,15 +36,15 @@ body {
   height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #000a14;
+  background: var(--color-slate-950);
 }
 ::-webkit-scrollbar-thumb {
-  background: #00152b;
+  background: var(--color-slate-850);
   border-radius: 9999px;
-  border: 2px solid #000a14;
+  border: 2px solid var(--color-slate-950);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #0073bb;
+  background: var(--color-brand-blue);
 }
 
 /* Custom transitions and helper classes */
