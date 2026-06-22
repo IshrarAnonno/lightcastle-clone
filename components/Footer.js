@@ -22,7 +22,7 @@ export default function Footer() {
         <div className="lg:col-span-4 flex flex-col gap-4">
           <Link href="/" className="flex items-center gap-1.5">
             <img 
-              src="https://lightcastlepartners.com/wp-content/uploads/2024/09/LCP-Logo-Website-13.png" 
+              src="https://lightcastlepartners.com/wp-content/uploads/2024/09/LCP-Logo-Website-12.png" 
               alt="LightCastle Partners" 
               className="h-10 md:h-12 w-auto object-contain" 
             />

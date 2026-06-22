@@ -29,6 +29,37 @@ const iconMap = {
 export default function Home() {
   const [activeTab, setActiveTab] = useState('management');
   const [videoModal, setVideoModal] = useState({ isOpen: false, id: '', title: '' });
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const slides = [
+    {
+      image: "https://lightcastlepartners.com/wp-content/uploads/2025/12/Marketing-Report-2025-Q3-8.webp",
+      title: "Advancing Mango Production & Forward Marketing in Bangladesh",
+      category: "Agriculture & Market Linkages"
+    },
+    {
+      image: "https://lightcastlepartners.com/wp-content/uploads/2026/03/Untitled-design-13-4.png",
+      title: "US/Israel–Iran Geopolitical Logistics Implications",
+      category: "Macro Economics & Trade"
+    },
+    {
+      image: "https://lightcastlepartners.com/wp-content/uploads/2026/02/Untitled-design.png",
+      title: "A Billion Dollars Over a Decade: Startup Capital Landscape",
+      category: "Venture Capital & Ecosystems"
+    },
+    {
+      image: "https://lightcastlepartners.com/wp-content/uploads/2026/02/Untitled-design-3.png",
+      title: "Next-Gen Growth & LDC Graduation Economic Reform",
+      category: "Policy Advisory & Public Sector"
+    }
+  ];
+
+  React.useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, [slides.length]);
 
   // Get first 3 insights to display on the Home page preview
   const homeInsights = INSIGHTS.slice(0, 3);
@@ -88,7 +119,7 @@ export default function Home() {
               <span className="text-[10px] font-mono tracking-widest uppercase text-brand-orange font-bold">Data-Driven Advisory</span>
             </div>
             <h2 className="font-editorial text-3xl md:text-5xl lg:text-6xl font-semibold leading-tight text-slate-900 tracking-tight">
-              At LightCastle, we take a systemic and data-driven approach to create opportunities for <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-blue to-brand-orange">growth and impact.</span>
+              Data-Driven <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-blue to-brand-orange">Growth &amp; Impact</span> in Emerging Markets
             </h2>
             <p className="text-sm md:text-base text-slate-600 mt-6 leading-relaxed max-w-xl">
               We are an international management consulting firm operating at the intersection of private enterprises, venture ecosystems, and global development. We simplify emerging market complexity to build competitive industries, mobilize capital, and scale impact.
@@ -105,32 +136,70 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="lg:col-span-5 grid grid-cols-1 gap-4">
-            <div className="bg-white border border-slate-200/80 shadow-sm hover:shadow-md hover:border-brand-blue/35 p-6 rounded-2xl transition-all">
-              <div className="flex items-center justify-between text-slate-400 mb-2">
-                <span className="text-[10px] font-mono tracking-widest uppercase font-bold">Scale</span>
-                <Users className="h-4 w-4 text-brand-blue" />
-              </div>
-              <h3 className="text-3xl font-bold text-slate-900 tracking-tight">150+</h3>
-              <p className="text-xs text-slate-500 mt-1">Clients served across public, private, and development domains.</p>
-            </div>
+          <div className="lg:col-span-5">
+            <div className="h-[400px] sm:h-[450px] relative rounded-3xl overflow-hidden shadow-xl border border-slate-200 bg-slate-900 group">
+              {/* Slideshow Images */}
+              {slides.map((slide, idx) => (
+                <div
+                  key={idx}
+                  className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
+                    idx === currentSlide ? 'opacity-100 scale-100 z-10' : 'opacity-0 scale-105 z-0'
+                  }`}
+                >
+                  <img
+                    src={slide.image}
+                    alt={slide.title}
+                    className="w-full h-full object-cover opacity-60"
+                  />
+                  {/* Subtle dark gradient overlay at the bottom for readability */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent z-10"></div>
+                </div>
+              ))}
 
-            <div className="bg-white border border-slate-200/80 shadow-sm hover:shadow-md hover:border-brand-orange/35 p-6 rounded-2xl transition-all">
-              <div className="flex items-center justify-between text-slate-400 mb-2">
-                <span className="text-[10px] font-mono tracking-widest uppercase font-bold">Reach</span>
-                <FilePieChart className="h-4 w-4 text-brand-orange" />
+              {/* Tag indicator */}
+              <div className="absolute top-4 left-4 z-20 bg-white/95 backdrop-blur-md border border-slate-200/80 rounded-lg px-2.5 py-1 text-[9px] font-mono font-bold text-brand-orange uppercase tracking-wider shadow-sm">
+                Featured Report
               </div>
-              <h3 className="text-3xl font-bold text-slate-900 tracking-tight">30+</h3>
-              <p className="text-xs text-slate-500 mt-1">Sectors impacted with deep market intelligence and assessment.</p>
-            </div>
 
-            <div className="bg-white border border-slate-200/80 shadow-sm hover:shadow-md hover:border-emerald-500/35 p-6 rounded-2xl transition-all">
-              <div className="flex items-center justify-between text-slate-400 mb-2">
-                <span className="text-[10px] font-mono tracking-widest uppercase font-bold">Funding</span>
-                <TrendingUp className="h-4 w-4 text-emerald-500" />
+              {/* Selector dots */}
+              <div className="absolute top-4 right-4 z-20 flex gap-1.5">
+                {slides.map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setCurrentSlide(idx)}
+                    className={`w-2 h-2 rounded-full transition-all cursor-pointer ${
+                      idx === currentSlide ? 'bg-brand-orange w-4' : 'bg-white/60 hover:bg-white'
+                    }`}
+                    aria-label={`Go to slide ${idx + 1}`}
+                  />
+                ))}
               </div>
-              <h3 className="text-3xl font-bold text-slate-900 tracking-tight">U$150Mn+</h3>
-              <p className="text-xs text-slate-500 mt-1">Impact investment capital mobilized to scale high-potential ventures.</p>
+
+              {/* Slide info overlay */}
+              <div className="absolute bottom-24 left-6 right-6 z-20 text-white">
+                <span className="text-[9px] font-mono font-bold tracking-widest text-brand-orange uppercase block mb-1">
+                  {slides[currentSlide].category}
+                </span>
+                <h3 className="text-base md:text-lg font-bold font-editorial leading-tight drop-shadow-sm line-clamp-2">
+                  {slides[currentSlide].title}
+                </h3>
+              </div>
+
+              {/* Glassmorphic Metrics Container */}
+              <div className="absolute bottom-4 left-4 right-4 z-20 bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl p-3.5 flex justify-between text-white shadow-lg">
+                <div className="text-center flex-1 border-r border-white/10">
+                  <div className="text-base font-extrabold tracking-tight">150+</div>
+                  <div className="text-[8px] font-mono tracking-wider uppercase text-white/70 mt-0.5">Clients</div>
+                </div>
+                <div className="text-center flex-1 border-r border-white/10">
+                  <div className="text-base font-extrabold tracking-tight">30+</div>
+                  <div className="text-[8px] font-mono tracking-wider uppercase text-white/70 mt-0.5">Sectors</div>
+                </div>
+                <div className="text-center flex-1">
+                  <div className="text-base font-extrabold tracking-tight">U$150Mn+</div>
+                  <div className="text-[8px] font-mono tracking-wider uppercase text-white/70 mt-0.5">Mobilized</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -237,13 +306,71 @@ export default function Home() {
             {CLIENTS.map((client, idx) => (
               <div 
                 key={idx}
-                className="bg-white border border-slate-200/80 hover:border-brand-blue/40 hover:shadow-sm rounded-xl p-4 flex items-center justify-center h-20 transition-all duration-300 group cursor-default"
+                className="bg-white border border-slate-200/80 hover:border-brand-blue/40 hover:shadow-md hover:scale-[1.05] rounded-xl p-4 flex items-center justify-center h-20 transition-all duration-300 group cursor-default"
               >
                 <img 
                   src={client.img} 
                   alt={client.name} 
                   className="max-h-10 max-w-[85%] object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 opacity-60 group-hover:opacity-100"
                 />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Partner Testimonials Section */}
+      <section id="testimonials" className="py-24 px-6 md:px-12 border-b border-slate-200/80 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <span className="text-[10px] font-mono tracking-widest uppercase text-brand-orange font-bold">Client Reviews</span>
+            <h2 className="font-editorial text-2xl md:text-4xl font-semibold text-slate-900 mt-1 tracking-tight">
+              What Our Partners Say
+            </h2>
+            <p className="text-xs text-slate-500 mt-1 max-w-md mx-auto">
+              Trusted by international institutions, bilateral agencies, and global organizations to deliver systemic impact.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                partner: "Embassy of the Netherlands",
+                logo: "https://lightcastlepartners.com/wp-content/uploads/2021/12/clients_ekn-logo1.png",
+                quote: "LightCastle's systemic insights and rigorous market assessments have been crucial in designing high-impact programs for agricultural value chains and entrepreneurship in Bangladesh.",
+                role: "Bilateral Development Partner"
+              },
+              {
+                partner: "International Finance Corporation (IFC)",
+                logo: "https://lightcastlepartners.com/wp-content/uploads/2021/12/clients_ifc-logo1.png",
+                quote: "Partnering with LightCastle has allowed us to effectively mobilize impact investment capital and accelerate growth for high-potential SMEs across emerging sectors.",
+                role: "Global Development Institution"
+              },
+              {
+                partner: "UN Women",
+                logo: "https://lightcastlepartners.com/wp-content/uploads/2021/12/clients_unwomen-logo1.png",
+                quote: "Through collaborative research and strategic frameworks, LightCastle has helped build actionable pathways for female labor force participation and childcare infrastructure development.",
+                role: "Strategic Gender Inclusion Partner"
+              }
+            ].map((t, idx) => (
+              <div 
+                key={idx}
+                className={`bg-white border-x border-b border-slate-200/80 shadow-sm hover:shadow-md hover:scale-[1.02] p-8 rounded-2xl transition-all flex flex-col justify-between border-t-4 ${
+                  idx % 2 === 1 ? 'border-t-brand-orange' : 'border-t-brand-blue'
+                }`}
+              >
+                <div>
+                  <div className="h-10 flex items-center mb-6">
+                    <img src={t.logo} alt={t.partner} className="h-8 object-contain opacity-80" />
+                  </div>
+                  <p className="text-xs md:text-sm italic text-slate-600 leading-relaxed font-serif">
+                    "{t.quote}"
+                  </p>
+                </div>
+                <div className="mt-6 pt-6 border-t border-slate-100">
+                  <h4 className="text-xs font-bold text-slate-800">{t.partner}</h4>
+                  <p className="text-[10px] text-slate-500 font-mono uppercase tracking-wider mt-0.5">{t.role}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -272,7 +399,7 @@ export default function Home() {
             {homeInsights.map((item, idx) => (
               <div 
                 key={idx}
-                className="bg-white border border-slate-200/80 hover:border-brand-blue/45 rounded-2xl overflow-hidden flex flex-col justify-between group transition-all hover:shadow-lg hover:shadow-brand-blue/5"
+                className="bg-white border border-slate-200/80 hover:border-brand-blue/45 hover:scale-[1.02] rounded-2xl overflow-hidden flex flex-col justify-between group transition-all hover:shadow-lg hover:shadow-brand-blue/5"
               >
                 <div>
                   <div className="h-48 w-full overflow-hidden relative bg-slate-100">
@@ -327,7 +454,7 @@ export default function Home() {
               <div 
                 key={video.id}
                 onClick={() => setVideoModal({ isOpen: true, id: video.id, title: video.title })}
-                className="bg-white border border-slate-200/80 hover:border-brand-orange/45 rounded-2xl overflow-hidden cursor-pointer group transition-all hover:shadow-lg hover:shadow-brand-orange/5"
+                className="bg-white border border-slate-200/80 hover:border-brand-orange/45 hover:scale-[1.02] rounded-2xl overflow-hidden cursor-pointer group transition-all hover:shadow-lg hover:shadow-brand-orange/5"
               >
                 <div className="relative aspect-video bg-slate-100 overflow-hidden">
                   <img 
@@ -378,7 +505,7 @@ export default function Home() {
                 target="_blank" 
                 rel="noopener noreferrer" 
                 key={idx}
-                className="bg-white border border-slate-200/80 hover:border-brand-blue/45 p-4 rounded-xl flex gap-4 transition-all group items-center hover:shadow-lg hover:shadow-brand-blue/5"
+                className="bg-white border border-slate-200/80 hover:border-brand-blue/45 hover:scale-[1.02] p-4 rounded-xl flex gap-4 transition-all group items-center hover:shadow-lg hover:shadow-brand-blue/5"
               >
                 <div className="h-16 w-16 md:h-20 md:w-20 shrink-0 bg-slate-100 rounded-lg overflow-hidden border border-slate-200">
                   <img 

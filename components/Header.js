@@ -14,7 +14,7 @@ export default function Header() {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <Link href="/" className="flex items-center gap-1.5 group">
           <img 
-            src="https://lightcastlepartners.com/wp-content/uploads/2024/09/LCP-Logo-Website-13.png" 
+            src="https://lightcastlepartners.com/wp-content/uploads/2024/09/LCP-Logo-Website-12.png" 
             alt="LightCastle Partners" 
             className="h-10 md:h-12 w-auto object-contain"
           />
